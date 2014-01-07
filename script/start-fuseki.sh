@@ -1,3 +1,4 @@
 #!/bin/bash
-export FUSEKI_HOME=/opt/fuseki/
-/opt/fuseki/fuseki-server --update --mem /ds
+FUSEKI_HOME=/opt/fuseki/
+OPTS=${OPTS:-"--update --loc=/data /ds"}
+/opt/fuseki/fuseki-server $OPTS

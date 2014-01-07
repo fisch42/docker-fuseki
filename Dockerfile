@@ -14,7 +14,10 @@ RUN chmod +x /opt/fuseki/download-fuseki.sh
 RUN /bin/bash /opt/fuseki/download-fuseki.sh
 ADD script/start-fuseki.sh /opt/fuseki/start-fuseki.sh
 RUN chmod +x /opt/fuseki/fuseki-server /opt/fuseki/s-* /opt/fuseki/start-fuseki.sh
+RUN mkdir /data
 
 EXPOSE 3030
+
+VOLUME ["/data"]
 
 CMD ["/opt/fuseki/start-fuseki.sh"]
